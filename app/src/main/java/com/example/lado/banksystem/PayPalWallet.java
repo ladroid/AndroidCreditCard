@@ -101,7 +101,7 @@ public class PayPalWallet extends AppCompatActivity {
                         Toast.makeText(PayPalWallet.this, "Validation sucessfully...", Toast.LENGTH_LONG).show();
                         Log.e("Validation -> ","Validation sucessfully...");
                         Log.e("cardNumber ", cardNumber);
-                        final Stripe stripe = new Stripe(PayPalWallet.this, "pk_test_R5Ytp5YyMZQ7PyMVlMXnOylz");
+                        final Stripe stripe = new Stripe(PayPalWallet.this, "YOUR PRIVATE KEY");
                         stripe.createToken(card, new TokenCallback() {
                             @Override
                             public void onError(Exception error) {
