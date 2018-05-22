@@ -49,7 +49,12 @@ public class LoginActivity extends AppCompatActivity {
                     User currentUser = dbHandler.Authonticate(new User(null, null, Email, Password));
                     if(currentUser != null) {
                         Snackbar.make(buttonLogin, "Successfully Login", Snackbar.LENGTH_LONG).show();
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                        //send name
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("Email", Email);
+                        startActivity(intent);
+                        //startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     }
                     else {
                         Snackbar.make(buttonLogin, "Failed Login", Snackbar.LENGTH_LONG).show();

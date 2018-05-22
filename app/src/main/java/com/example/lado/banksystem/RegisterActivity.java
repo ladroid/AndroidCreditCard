@@ -50,6 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if(!dbHandler.isEmailExists(Email)) {
                         dbHandler.addUser(new User(null, UserName, Email, Password));
                         Snackbar.make(buttonRegister, "Successfully registerd", Snackbar.LENGTH_LONG).show();
+
                         //startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                         new Handler().postDelayed(new Runnable() {
                             @Override
