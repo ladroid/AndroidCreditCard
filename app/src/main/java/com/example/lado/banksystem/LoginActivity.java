@@ -9,6 +9,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.Spanned;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,10 +51,11 @@ public class LoginActivity extends AppCompatActivity {
                     if(currentUser != null) {
                         Snackbar.make(buttonLogin, "Successfully Login", Snackbar.LENGTH_LONG).show();
 
-                        //send name
+                        //send email
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         intent.putExtra("Email", Email);
                         startActivity(intent);
+
                         //startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     }
                     else {

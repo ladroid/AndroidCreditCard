@@ -51,6 +51,10 @@ public class RegisterActivity extends AppCompatActivity {
                         dbHandler.addUser(new User(null, UserName, Email, Password));
                         Snackbar.make(buttonRegister, "Successfully registerd", Snackbar.LENGTH_LONG).show();
 
+                        //send name
+                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                        intent.putExtra("Name", UserName);
+                        startActivity(intent);
                         //startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                         new Handler().postDelayed(new Runnable() {
                             @Override

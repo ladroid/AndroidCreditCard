@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     TextView textView;
+    TextView textView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +49,12 @@ public class MainActivity extends AppCompatActivity
 
         Intent intent = getIntent();
         String Email = intent.getStringExtra("Email");
+        String Name = intent.getStringExtra("Name");
         View headerView = navigationView.getHeaderView(0);
         textView = (TextView) headerView.findViewById(R.id.textViewEmail);
         textView.setText(Email);
+        textView1 = (TextView)headerView.findViewById(R.id.textName);
+        textView1.setText(Name);
     }
 
     @Override
