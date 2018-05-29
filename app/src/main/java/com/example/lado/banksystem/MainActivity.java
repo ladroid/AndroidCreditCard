@@ -1,11 +1,14 @@
 package com.example.lado.banksystem;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
@@ -27,6 +30,10 @@ public class MainActivity extends AppCompatActivity
 
     TextView textView;
     TextView textView1;
+
+    //this annotations for shortcut
+    @TargetApi(Build.VERSION_CODES.N_MR1)
+    @RequiresApi(api = Build.VERSION_CODES.N_MR1)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

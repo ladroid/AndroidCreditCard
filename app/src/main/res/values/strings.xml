@@ -23,7 +23,7 @@
     <string name="buy_now">BUY NOW</string>
 
     <string name="compose_shortcut_short_label1">Hello1</string>
-    <string name="compose_shortcut_long_label1">Hello2</string>
-    <string name="compose_disabled_message1">Hello3</string>
+    <string name="compose_shortcut_long_label1">Hello1</string>
+    <string name="compose_disabled_message1">Hello1</string>
 
 </resources>
