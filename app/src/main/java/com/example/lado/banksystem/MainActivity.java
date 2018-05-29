@@ -1,6 +1,10 @@
 package com.example.lado.banksystem;
 
 import android.content.Intent;
+import android.content.pm.ShortcutInfo;
+import android.content.pm.ShortcutManager;
+import android.graphics.drawable.Icon;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +20,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -26,6 +32,25 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //make shortcut with ShortcutManager
+        ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
+
+        //making Intent
+        Intent intent1 = new Intent(MainActivity.this, PayPalWallet.class);
+        Uri uri = intent1.getData();
+
+        //show information when we pressed long on icon
+        ShortcutInfo shortcut = new ShortcutInfo.Builder(this, "id1")
+                .setShortLabel("Task")
+                .setLongLabel("StripeAPI")
+                .setIcon(Icon.createWithResource(MainActivity.this, R.drawable.ic_launcher_round))
+                .setIntent(new Intent(Intent.ACTION_VIEW, uri))
+                .build();
+
+        //make array with our inforamtion
+        shortcutManager.setDynamicShortcuts(Arrays.asList(shortcut));
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
